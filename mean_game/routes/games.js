@@ -3,8 +3,12 @@ require('dotenv');
 const router = express.Router();
 const gamesController = require('../controllers/gameController');
 
-router.route('/games')
+router.route('')
     .get(gamesController.getAll);
+
+router.route('/:gameId')
+    .get(gamesController.getOne)
+    .delete(gamesController.deleteOne);
 
 
 router.route('/divide/:num1')
